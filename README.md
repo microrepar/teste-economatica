@@ -3,17 +3,13 @@
 Teste
 -----
 
-O objetivo deste teste é avaliar seu conhecimento em programação básica, estrutura de dados e
-programação orientada a objeto.
+O objetivo deste teste é avaliar seu conhecimento em programação básica, estrutura de dados e programação orientada a objeto.
 
 As duas questões do teste são totalmente independentes.
 
-Se tiver dúvida de algo, escreva a dúvida claramente, tome uma decisão, escreva qual foi sua decisão e
-prossiga baseado na sua decisão.
+Se tiver dúvida de algo, escreva a dúvida claramente, tome uma decisão, escreva qual foi sua decisão e prossiga baseado na sua decisão.
 
-Você pode continuar usando uma linguagem de algoritmo genérico (como está abaixo) ou também pode
-usar uma linguagem real à sua escolha. O importante não é o código executar, o importante é estar correto e
-mostrar sua linha de raciocínio.
+Você pode continuar usando uma linguagem de algoritmo genérico (como está abaixo) ou também pode usar uma linguagem real à sua escolha. O importante não é o código executar, o importante é estar correto e mostrar sua linha de raciocínio.
 
 
 Questão 1
@@ -96,19 +92,41 @@ fim
 Questão 2
 =========
 
-> Modele as informações abaixo seguindo boas práticas de orientação a objetos, não precisa fazer diagramas,
-> apresente apenas as classes. Faça a implementação apenas do que achar necessário para o entendimento
-> do que está descrito abaixo:
-> 1. Uma carteira de investimentos é formada por um conjunto de investimentos de tipos variados numa
-> certa data.
+> Modele as informações abaixo seguindo boas práticas de orientação a objetos, não precisa fazer diagramas, apresente apenas as classes. Faça a implementação apenas do que achar necessário para o entendimento do que está descrito abaixo:
+> 1. Uma carteira de investimentos é formada por um conjunto de investimentos de tipos variados numa certa data.
 > 2. Cada investimento de uma carteira possui no mínimo a informação de descrição e o valor investido.
-> 3. A descrição de um investimento de uma carteira depende de cada tipo e combina as informações
-> adicionais sobre o investimento.
+> 3. A descrição de um investimento de uma carteira depende de cada tipo e combina as informações adicionais sobre o investimento.
 > 4. Um investimento do tipo ações, possui adicionalmente o nome da ação e a quantidade de ações.
-> 5. Um investimento do tipo fundos, possui adicionalmente o nome do fundo, CNPJ do fundo e a
-> quantidade de cotas.
-> 6. Um investimento do tipo título de renda fixa, possui adicionalmente o nome do título, se é pré ou pós
-> fixado e, se for pré fixado possui o valor da taxa de juros, se for pós fixado possui um texto adicional.
+> 5. Um investimento do tipo fundos, possui adicionalmente o nome do fundo, CNPJ do fundo e a quantidade de cotas.
+> 6. Um investimento do tipo título de renda fixa, possui adicionalmente o nome do título, se é pré ou pós fixado e, se for pré fixado possui o valor da taxa de juros, se for pós fixado possui um texto adicional.
+
+
+Implementação Questao 1
+=======================
+
+Principais pontos
+-----------------
+
+Foi criado o módulo pessoas.py, que implementa a estrutura de dados Pessoa, a classe Pessoas e todo os códigos necessários para a Questão 1.
+
+Para implementacão dos métodos de classe, resolvi utilizar o padrão de estilo snake case, que é o padrão convencionado pela linguagem de programação python, mas nao é obrigatorio.
+
+Utilizei uma namedtuple para representar a estrutura Pessoa em python, pois é um tipo de dado imutável e indexado, o qual permite acessar os indíces pelo nome, funcionando semelhantemente a um struct.
+
+Criei a classe Pessoas responsável pela manipulação da lista de estrutura do tipo tupla que representa uma Pessoa.
+
+Nos casos de uso apresentados na questão 1, aparentemente o método "Pessoas.Criar( )" efetua a crição de uma instância da classe Pessoas, atribuindo a referência do objeto criado para uma variável de nome **lista**, mas o que aparentemente ocorre é que a própria classe Pessoas carrega a referência do objeto criado, porque todas as chamadas de método de instância passam a ser executadas pela própria classe, e neste ponto surgiram algumas dúvidas. Primeiro, o objeto criado seria referenciado pela variável **lista**, o que não ocorre nos exemplos de uso, pois a variável **lista** não é utilizada em momento algum após a chamada do método "Pessoa.Criar( )". Segundo, se a atribuição da instância foi realizada para a variável **lista**, entao os métodos somente poderiam ser acessados a partir da variável **lista** e nao da classe Pessoa, como ocorre em todos os exemplos de uso.
+
+Na especificação do código informa que o método criar é um construtor, o que também gerou outra dúvida, pois métodos contrutores geralmente não retornam valores, a não ser a referência do objeto construido. Em python, instânciar um objeto é semelhante a efetuar uma chamada de uma função, atribuindo para uma variável que armazena a referência do objeto criado, conforme exemplo a seguir:
+```
+>>> pessoas = Pessoas()
+```
+Então, o código acima, os metódos ficam todos acessíveis a partir da variável pessoas, em que foi atribuido a referência do objeto criado.
+
+Desta forma eu decide por não implementar o método "criar", pois o método contrutor da linguagem python é o ```__new__```, que por baixo dos panos ele chama o método inicializador ```__init__```, sendo assim a especifição do codigo é plenamente atendida com a implementação do metodo ```__init__```.
+    
+Foi implementado a ordenação da lista de pessoas utilizando o algoritmo bubble sort. Não é o algoritmo mais performaticatico para listas muito grandes totalmente desordenadas, porém na maioria das linguagens existem funções e métodos embutidos que implementam ordenações otimizadas.
+
 
 
 
