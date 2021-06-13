@@ -128,5 +128,29 @@ Desta forma eu decide por não implementar o método "criar", pois o método con
 Foi implementado a ordenação da lista de pessoas utilizando o algoritmo bubble sort. Não é o algoritmo mais performaticatico para listas muito grandes totalmente desordenadas, porém na maioria das linguagens existem funções e métodos embutidos que implementam ordenações otimizadas.
 
 
+Implementação Questao 2
+=======================
+
+Foi criado o módulo **carteira.py** que implementa o conjunto de classes de investimentos que compõe uma carteira de investimentos para Questao 2.
+
+Foram tomadas as seguintes decisões de implementação:
+
+ - Criação de uma enumeracao, pois é uma forma mais consistente de classificar um objeto. Foi utilizado para identificação do tipo de investimento Titulo Renda Fixa, se ele é pré ou pós fixado.
+
+ - Criação de uma classe base abstrata para definir um tipo de dado Investimento com atributos e métodos em comum, que são utilizados pelas classes concretas, nela contém métodos abstratos que devem ser implementados por todas as classes que a herdam.
+
+ - Criação de classes de exceção para tratamento de erros personalizados.
+
+ - Criação das classes concretas de Investimento e a Carteira de Investimento que contém uma lista de Investimentos variados.
+
+ - Implementação de algumas regras nos métodos de investimentos apenas como exemplo nos locais onde possivelmente será necessário, porém não existem maiores detalhes de regras de negócio na especificação.
+
+ - Definição de um método abastrato para a funcionalidade de descrição do investimento, para que cada classe concreta implemente a composição da descrição conforme o item 3 da questão 2.
+
+
+
+
+
+
 
 
