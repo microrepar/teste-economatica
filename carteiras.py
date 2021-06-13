@@ -69,7 +69,7 @@ class Investimento(abc.ABC):
 class Acao(Investimento):
     def __init__(self, nome: str):
         super().__init__(nome)
-        self._quantidade: int = quantidade
+        self._quantidade: int
 
     def adiciona_valor(self, valor: float):
         # Local onde deve ser implementado as regras de valores
