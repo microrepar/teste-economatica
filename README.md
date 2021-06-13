@@ -16,19 +16,15 @@ Questão 1
 =========
 >Abaixo temos uma estrutura de dados "Pessoa" e uma classe "Pessoas".
 >
->Implemente os métodos da classe Pessoas de forma que seja possível executar os exemplos de uso abaixo,
->não precisa implementar nada nos exemplos de uso.
+>Implemente os métodos da classe Pessoas de forma que seja possível executar os exemplos de uso abaixo, não precisa implementar nada nos exemplos de uso.
 >
 >Você pode criar variáveis, estrutura e métodos que achar necessário para completar a tarefa.
 >
->O método "LerUmaPessoa" não precisa ser implementado, ele deve ser usado como auxiliar para carregar a
->lista de pessoas, se a função retornar "nulo" significa que não temos mais pessoas para serem carregadas.
+>O método "LerUmaPessoa" não precisa ser implementado, ele deve ser usado como auxiliar para carregar a lista de pessoas, se a função retornar "nulo" significa que não temos mais pessoas para serem carregadas.
 >
->Implementar rotinas de ordenação e busca que achar necessárias para o funcionamento dos demais
->métodos da classe.
+>Implementar rotinas de ordenação e busca que achar necessárias para o funcionamento dos demais métodos da classe.
 >
->Se utilizar uma linguagem de programação real, por favor, utilize apenas tipos de dados simples, arrays e
->estruturas simples. Não utilizar classes/bibliotecas que resolveriam o problema diretamente.
+>Se utilizar uma linguagem de programação real, por favor, utilize apenas tipos de dados simples, arrays e estruturas simples. Não utilizar classes/bibliotecas que resolveriam o problema diretamente. 
 >
 >Leve em consideração na sua implementação que esta lista pode ter milhões de pessoas.
 
@@ -101,7 +97,7 @@ Questão 2
 > 6. Um investimento do tipo título de renda fixa, possui adicionalmente o nome do título, se é pré ou pós fixado e, se for pré fixado possui o valor da taxa de juros, se for pós fixado possui um texto adicional.
 
 
-Implementação Questao 1
+Implementação Questão 1
 =======================
 
 Principais pontos
@@ -128,7 +124,7 @@ Desta forma eu decide por não implementar o método "criar", pois o método con
 Foi implementado a ordenação da lista de pessoas utilizando o algoritmo bubble sort. Não é o algoritmo mais performaticatico para listas muito grandes totalmente desordenadas, porém na maioria das linguagens existem funções e métodos embutidos que implementam ordenações otimizadas.
 
 
-Implementação Questao 2
+Implementação Questão 2
 =======================
 
 Foi criado o módulo **carteira.py** que implementa o conjunto de classes de investimentos que compõe uma carteira de investimentos para Questao 2.
